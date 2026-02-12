@@ -4,7 +4,7 @@ export default function Hero() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="/images/song-linh-poke-2.png"
+          src="/images/song-linh-poke-3.png"
           alt="Song Linh Bistro food"
           className="w-full h-full object-cover"
         />
