@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const reviews = [
   {
@@ -35,6 +36,8 @@ function Stars({ count }: { count: number }) {
 }
 
 export default function Reviews() {
+  const { t } = useLanguage();
+
   return (
     <section id="reviews" className="py-24 sm:py-32 bg-cream relative overflow-hidden">
       {/* Decorative background elements */}
@@ -46,14 +49,14 @@ export default function Reviews() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 fade-up">
           <span className="text-leaf font-semibold text-sm tracking-widest uppercase">
-            What People Say
+            {t('reviews.label')}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-forest-dark mt-3 mb-6">
-            Loved by Our Guests
+            {t('reviews.title')}
           </h2>
           <div className="flex items-center justify-center gap-2 text-stone-light">
             <Stars count={5} />
-            <span className="text-sm font-medium ml-1">4.6 out of 5 (132 reviews) on Google</span>
+            <span className="text-sm font-medium ml-1">{t('reviews.rating')}</span>
           </div>
         </div>
 
@@ -65,27 +68,18 @@ export default function Reviews() {
               className="fade-up relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Quote icon */}
               <Quote className="w-10 h-10 text-leaf/20 absolute top-6 right-6" />
-
-              {/* Stars */}
               <Stars count={review.rating} />
-
-              {/* Review text */}
               <p className="mt-5 text-stone-light leading-relaxed text-[15px]">
-                "{review.text}"
+                &ldquo;{review.text}&rdquo;
               </p>
-
-              {/* Author */}
               <div className="mt-6 pt-5 border-t border-cream-dark">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-leaf to-forest flex items-center justify-center text-white font-bold text-sm">
                     {review.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-stone text-sm">
-                      {review.name}
-                    </p>
+                    <p className="font-semibold text-stone text-sm">{review.name}</p>
                     <p className="text-stone-light text-xs">
                       {review.badge} &middot; {review.time}
                     </p>

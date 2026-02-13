@@ -1,19 +1,22 @@
 import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-24 sm:py-32 bg-warm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 fade-up">
           <span className="text-leaf font-semibold text-sm tracking-widest uppercase">
-            Find Us
+            {t('contact.label')}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-forest-dark mt-3 mb-6">
-            Come Say Hello
+            {t('contact.title')}
           </h2>
           <p className="text-stone-light text-lg">
-            We're on a cozy lane just off Xuan Dieu — look for the green sign and follow the aroma.
+            {t('contact.description')}
           </p>
         </div>
 
@@ -41,10 +44,10 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold text-forest-dark text-lg mb-1">
-                  Address
+                  {t('contact.address')}
                 </h3>
                 <p className="text-stone-light leading-relaxed">
-                  46A Ng.31 Đ. Xu&acirc;n Diệu, Quảng An, T&acirc;y Hồ, H&agrave; Nội
+                  46A Ng.31 \u0110. Xu&acirc;n Di\u1ec7u, Qu\u1ea3ng An, T&acirc;y H\u1ed3, H&agrave; N\u1ed9i
                 </p>
                 <a
                   href="https://maps.app.goo.gl/xU8qZ1vQP1pUdra4A"
@@ -52,7 +55,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-leaf hover:text-forest text-sm font-medium mt-1 transition-colors"
                 >
-                  Open in Google Maps
+                  {t('contact.openInMaps')}
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -65,7 +68,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold text-forest-dark text-lg mb-1">
-                  Phone
+                  {t('contact.phone')}
                 </h3>
                 <a
                   href="tel:+84968877793"
@@ -83,9 +86,9 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold text-forest-dark text-lg mb-1">
-                  Hours
+                  {t('contact.hours')}
                 </h3>
-                <p className="text-stone-light">Open daily</p>
+                <p className="text-stone-light">{t('contact.openDaily')}</p>
               </div>
             </div>
 
@@ -97,7 +100,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="bg-forest hover:bg-forest-dark text-white font-semibold px-6 py-3.5 rounded-full text-center transition-all hover:shadow-lg"
               >
-                Order Online
+                {t('contact.orderOnline')}
               </a>
               <a
                 href="https://www.facebook.com/songlinhfoodanddrink"
@@ -105,7 +108,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="border-2 border-forest text-forest hover:bg-forest hover:text-white font-semibold px-6 py-3.5 rounded-full text-center transition-all"
               >
-                Facebook Page
+                {t('contact.facebookPage')}
               </a>
             </div>
           </div>
