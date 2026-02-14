@@ -33,7 +33,7 @@ export function calculateDaysToGoal(
   currentWeight: number,
   targetWeight: number,
 ): number {
-  const weightDiff = Math.abs(currentWeight - targetWeight);
+  const weightDiff = Math.abs(targetWeight - currentWeight);
   if (weightDiff === 0) return 0;
   const dailyDelta = tdee * RATE_DEFICITS[rate];
   if (dailyDelta <= 0) return 0;

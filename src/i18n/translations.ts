@@ -99,6 +99,8 @@ type TranslationSet = {
     activity4: string;
     activity5: string;
     weightChange: string;
+    weightGoalErrorLose: string;
+    weightGoalErrorGain: string;
     rate: string;
     rateSlow: string;
     rateNormal: string;
@@ -230,6 +232,8 @@ export const translations: Record<Language, TranslationSet> = {
       activity4: 'Heavy exercise 6-7x/week',
       activity5: 'Very active, physical job',
       weightChange: 'WEIGHT GOAL',
+      weightGoalErrorLose: 'Target weight must be less than your current weight to lose fat',
+      weightGoalErrorGain: 'Target weight must be greater than your current weight to gain muscle',
       rate: 'RATE OF CHANGE',
       rateSlow: 'Slow',
       rateNormal: 'Normal',
@@ -359,6 +363,8 @@ export const translations: Record<Language, TranslationSet> = {
       activity4: 'V\u1eadn \u0111\u1ed9ng nhi\u1ec1u 6-7 bu\u1ed5i',
       activity5: 'V\u1eadn \u0111\u1ed9ng r\u1ea5t nhi\u1ec1u',
       weightChange: 'C\u00c2N N\u1eb6NG M\u1ee4C TI\u00caU',
+      weightGoalErrorLose: 'Cân nặng mục tiêu phải thấp hơn cân nặng hiện tại để giảm mỡ',
+      weightGoalErrorGain: 'Cân nặng mục tiêu phải cao hơn cân nặng hiện tại để tăng cân',
       rate: 'T\u1ed0C \u0110\u1ed8 T\u0102NG/GI\u1ea2M C\u00c2N',
       rateSlow: 'Ch\u1eadm',
       rateNormal: 'B\u00ecnh th\u01b0\u1eddng',

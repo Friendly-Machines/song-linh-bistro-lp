@@ -128,6 +128,7 @@ export default function TDEECalculator() {
   const [rateDropdownOpen, setRateDropdownOpen] = useState(false);
   const [weightChangeDraft, setWeightChangeDraft] = useState('');
   const [editingWeightChange, setEditingWeightChange] = useState(false);
+  const [weightGoalError, setWeightGoalError] = useState('');
 
   const activityDescriptions = [
     t('tdee.activity1'),
@@ -150,6 +151,16 @@ export default function TDEECalculator() {
   ];
 
   const calculate = () => {
+    setWeightGoalError('');
+    if (goal === 'lose' && weightChange >= weight) {
+      setWeightGoalError(t('tdee.weightGoalErrorLose'));
+      return;
+    }
+    if (goal === 'gain' && weightChange <= weight) {
+      setWeightGoalError(t('tdee.weightGoalErrorGain'));
+      return;
+    }
+
     const bmr = calculateBMR(gender, weight, height, age);
     const tdee = calculateTDEE(bmr, activityLevel);
     const goalCalories = calculateGoalCalories(tdee, goal, rate);
@@ -232,7 +243,7 @@ export default function TDEECalculator() {
                           {goalOptions.map((o) => (
                             <button
                               key={o.value}
-                              onClick={() => { setGoal(o.value); setGoalDropdownOpen(false); }}
+                              onClick={() => { setGoal(o.value); setGoalDropdownOpen(false); setWeightGoalError(''); }}
                               className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-cream ${
                                 goal === o.value ? 'text-forest font-semibold bg-cream' : 'text-stone'
                               }`}
@@ -279,7 +290,7 @@ export default function TDEECalculator() {
                 <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-8">
                   <NumberStepper id="tdee-age" label={t('tdee.age')} value={age} unit={t('tdee.ageUnit')} onChange={setAge} min={10} max={100} nextId="tdee-height" />
                   <NumberStepper id="tdee-height" label={t('tdee.height')} value={height} unit={t('tdee.heightUnit')} onChange={setHeight} min={100} max={250} nextId="tdee-weight" />
-                  <NumberStepper id="tdee-weight" label={t('tdee.weight')} value={weight} unit={t('tdee.weightUnit')} onChange={setWeight} min={30} max={250} />
+                  <NumberStepper id="tdee-weight" label={t('tdee.weight')} value={weight} unit={t('tdee.weightUnit')} onChange={(v) => { setWeight(v); setWeightGoalError(''); }} min={30} max={250} />
                 </div>
 
                 {/* Activity level */}
@@ -329,7 +340,10 @@ export default function TDEECalculator() {
                           onBlur={() => {
                             setEditingWeightChange(false);
                             const parsed = parseInt(weightChangeDraft, 10);
-                            if (!isNaN(parsed)) setWeightChange(Math.min(100, Math.max(1, parsed)));
+                            if (!isNaN(parsed)) {
+                              setWeightChange(Math.min(250, Math.max(1, parsed)));
+                              setWeightGoalError('');
+                            }
                           }}
                           onKeyDown={(e) => { if (e.key === 'Enter') (e.target as HTMLInputElement).blur(); }}
                           className="w-full text-center text-2xl font-bold text-forest-dark focus:outline-none bg-transparent"
@@ -367,6 +381,10 @@ export default function TDEECalculator() {
                       </div>
                     </div>
                   </div>
+                )}
+
+                {weightGoalError && (
+                  <p className="text-sm text-red-600 text-center -mt-4 mb-4">{weightGoalError}</p>
                 )}
 
                 {/* Calculate button */}
