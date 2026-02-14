@@ -469,10 +469,10 @@ export default function TDEECalculator() {
                     href={buildWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1fb855] text-white font-bold text-lg sm:text-xl py-5 px-8 rounded-full transition-all hover:shadow-2xl hover:shadow-[#25D366]/30 hover:-translate-y-1"
+                    className="group inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:bg-[#1fb855] hover:shadow-xl hover:shadow-[#25D366]/30 hover:-translate-y-1 hover:scale-110"
+                    aria-label="Contact via WhatsApp"
                   >
-                    <WhatsAppIcon className="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0" />
-                    <span>{t('tdee.mealplanCta')}</span>
+                    <WhatsAppIcon className="w-7 h-7" />
                   </a>
                   <p className="text-xs text-stone-light mt-3">
                     {t('tdee.mealplanHint')}

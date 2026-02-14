@@ -18,9 +18,9 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <TDEECalculator />
       <MenuHighlights />
       <Reviews />
-      <TDEECalculator />
       <OrderBanner />
       <Contact />
       <Footer />
