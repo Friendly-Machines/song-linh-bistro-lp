@@ -9,7 +9,6 @@ import {
   calculateTDEE,
   calculateGoalCalories,
   calculateDaysToGoal,
-  ACTIVITY_MULTIPLIERS,
 } from '../lib/tdee';
 
 type Results = {
