@@ -43,12 +43,18 @@ export default function Hero() {
           {t('hero.description')}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="#tdee"
+            className="order-2 sm:order-1 border-2 border-white/50 hover:border-white text-white font-medium px-6 py-3.5 rounded-full text-base transition-all hover:bg-white/10 hover:-translate-y-0.5"
+          >
+            {t('hero.calorieTitle')}
+          </a>
           <a
             href="https://order-ngay.com/order/song-linh-bistro"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-leaf hover:bg-leaf-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:shadow-xl hover:shadow-leaf/30 hover:-translate-y-0.5"
+            className="order-1 sm:order-2 group bg-leaf hover:bg-leaf-light text-white font-semibold px-8 py-3.5 rounded-full text-lg transition-all hover:shadow-xl hover:shadow-leaf/30 hover:-translate-y-0.5"
           >
             {t('hero.cta')}
             <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">

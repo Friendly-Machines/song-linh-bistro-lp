@@ -47,7 +47,7 @@ export default function Contact() {
                   {t('contact.address')}
                 </h3>
                 <p className="text-stone-light leading-relaxed">
-                  46A Ng.31 \u0110. Xu&acirc;n Di\u1ec7u, Qu\u1ea3ng An, T&acirc;y H\u1ed3, H&agrave; N\u1ed9i
+                  46A Ng.31 Đ. Xuân Diệu, Quảng An, Tây Hồ, Hà Nội
                 </p>
                 <a
                   href="https://maps.app.goo.gl/xU8qZ1vQP1pUdra4A"

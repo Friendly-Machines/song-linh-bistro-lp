@@ -15,6 +15,7 @@ type TranslationSet = {
     title2: string;
     description: string;
     cta: string;
+    calorieTitle: string;
   };
   about: {
     label: string;
@@ -141,6 +142,7 @@ export const translations: Record<Language, TranslationSet> = {
       description:
         'Poke bowls, smoothie bowls, fresh juices, artisan coffee, homemade cakes, nut milks & more \u2014 crafted with love in the heart of Tay Ho.',
       cta: 'View Menu & Order',
+      calorieTitle: 'Calorie Calculator',
     },
     about: {
       label: 'Our Story',
@@ -266,12 +268,13 @@ export const translations: Record<Language, TranslationSet> = {
       order: '\u0110\u1eb7t h\u00e0ng',
     },
     hero: {
-      tagline: 'T\u01b0\u01a1i \u2022 L\u00e0nh m\u1ea1nh \u2022 T\u1ef1 l\u00e0m',
-      title1: 'Nu\u00f4i d\u01b0\u1ee1ng c\u01a1 th\u1ec3,',
-      title2: 'Th\u1ecfa m\u00e3n t\u00e2m h\u1ed3n',
+      tagline: 'Tươi ngon \u2022 Lành mạnh \u2022 Nhà làm',
+      title1: 'Nuôi Dưỡng Cơ Thể,',
+      title2: 'Chạm Đến Tâm Hồn',
       description:
-        'Poke bowl, smoothie bowl, n\u01b0\u1edbc \u00e9p t\u01b0\u01a1i, c\u00e0 ph\u00ea th\u1ee7 c\u00f4ng, b\u00e1nh t\u1ef1 l\u00e0m, s\u1eefa h\u1ea1t & nhi\u1ec1u h\u01a1n n\u1eefa \u2014 \u0111\u01b0\u1ee3c ch\u1ebf bi\u1ebfn v\u1edbi t\u00ecnh y\u00eau t\u1ea1i T\u00e2y H\u1ed3.',
+        'Poke bowl, smoothie bowl, nước ép tươi, cà phê thủ công, bánh nhà làm, sữa hạt và nhiều hơn nữa — tất cả được chuẩn bị từ những nguyên liệu chọn lọc tươi ngon nhất.',
       cta: 'Xem th\u1ef1c \u0111\u01a1n & \u0110\u1eb7t h\u00e0ng',
+      calorieTitle: 'Tính calo',
     },
     about: {
       label: 'C\u00e2u chuy\u1ec7n c\u1ee7a ch\u00fang t\u00f4i',
